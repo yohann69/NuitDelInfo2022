@@ -1,0 +1,21 @@
+{
+    "name": "quentin-bubu-dev/nuit-del-info2022",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NuitDelInfo2022\\": "src/",
+            "App\\" : "app/",
+            "Api": "api/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Quentin Bubu",
+            "email": "quentinbubu.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
