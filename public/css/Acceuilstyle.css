@@ -29,6 +29,8 @@ html{
     margin-bottom:0px;
     justify-content: space-around;
     align-self: flex-end;
+    background-size: 10px;
+    background-color: #575757;
 }
 
 
@@ -42,12 +44,22 @@ html{
 
 }
 
-.retourButton{
-    text-decoration: none;
-    color:white;
+.footer{
+    display:flex;
+}
+
+.sectionButton{
     height:500px;
     width:150px;
     border-radius:25px;
     background-color:red;
+    align-self: center;
+}
+
+
+
+.retourButton{
+    text-decoration: none;
+    color:white;
 
 }

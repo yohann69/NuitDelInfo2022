@@ -14,8 +14,14 @@ let image = {
     "secondFloorWalk10": "img/assets/IMG_7675-min.JPG",
     "secondFloorWalk10": "img/assets/IMG_7676-min.JPG",
     "secondFloorQuestion1": "img/assets/IMG_7677-min.JPG",
-    "secondFloorWalk02": "img/assets/IMG_7676-min.JPG",
-    "secondFloorWalk03": "img/assets/IMG_7676-min.JPG",
+    "secondFloorWalk20": "img/assets/IMG_7678-min.JPG",
+    "secondFloorWalk21": "img/assets/IMG_7679-min.JPG",
+    "secondFloorQuestion2": "img/assets/IMG_7680-min.JPG",
+    "secondFloorWalk30": "img/assets/IMG_7681-min.JPG",
+    "secondFloorWalk31": "img/assets/IMG_7682-min.JPG",
+    "secondFloorQuestion3": "img/assets/IMG_7683-min.JPG",
+    "secondFloorWalk40": "img/assets/IMG_7684-min.JPG",
+    
 
 
 }
