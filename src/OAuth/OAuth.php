@@ -2,6 +2,8 @@
 
 namespace NuitDelInfo2022\OAuth;
 
+
+
 class OAuth2
 {
 
@@ -17,19 +19,9 @@ class OAuth2
      */
     public static function OAuth(string $platform, ?string $code = null): Object
     {
-        $dotenv = Dotenv\Dotenv::createImmutable('../../');
-        $dotenv->load();
-        switch ($platform) {
-            case self::DISCORD:
-                $credentials = self::getDiscord();
-                break;
-            // case self::GOOGLE:
-            //     $credentials = self::getGoogle();
-            //     break;
+        $ids = json_decode(file_get_contents('../../config.json'));
 
-            default:
-                die('Unknown platform');
-        }
+        $credentials = self::getDiscord();
 
         // Get code if app doesn't have code
         if (is_null($code)) {
@@ -103,7 +95,7 @@ class OAuth2
             'base_url' => 'https://discord.com/api/oauth2/authorize',
             'token_url' => 'https://discord.com/api/oauth2/token',
             'endpoint' => 'https://discord.com/api/users/@me',
-            'client_id' => $_ENV['OAUTH2_DISCORD_CLIENT_ID'],
+            'client_id' => json_decode(file_get_contents('../../config.json'))->clientId,
             'client_secret' => $_ENV['OAUTH2_DISCORD_CLIENT_SECRET'],
             'redirect_uri' => $_ENV['OAUTH2_CLIENT_REDIRECT_URI'],
             'scope' => 'identify%20email',
