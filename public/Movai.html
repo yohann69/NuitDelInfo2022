@@ -14,14 +14,62 @@
                 
                                     <form action="Movai.html" style="position:absolute;top:60%;right:50%;">
                                                     <button style="font-size: 12px;background-color: aquamarine;"> Retry </button>
-                <form>
+        </form>
 
-                                <section>
-                <h6 style="background-color: cornflowerblue;writing-mode: vertical-lr;position:absolute;top:35%;font-size:35px;">KICLHAI I
-                Le SIDA ne peut pas se transmettre par la salive</h6>
+                                <section><script> var i = 1 
+                                            i = 2
+                                                        console.log(i)</script>
+                <h6 style="margin:120px;right:35%;background-color: blue;writing-mode: horizontal-rl;position:absolute;top:20%;font-size:35px;transform: rotate(140deg);width:150px;">KLiCLHAi I
+                Le SIDA <br><br>nheu pe <br><br><br>pa ceux trensmaitre by<br> <br><br><br>thé sa live</h6>
 
-                        </section>
+     <h6 style="margin:100px;right:25%;background-color: rgb(212, 237, 100);writing-mode: vertical-lr;position:absolute;top:15%;font-size:30px;transform: rotate(40deg);width:150px;">KLiCLhai II
+                   
+        
+         Le VIH se transmet par le sang, <br><br>le <br>sperme et les sécrétions vaginales</h6>
+
+
+
+
+         <h6 style="margin:100px;right:15%;background-color: rgb(237, 100, 100);position:absolute;top:5%;font-size:30px;transform: rotate(120deg);width:150px;">KLiCLhai II
+                   
+        
+            Le VIH se transmet par le sang, le sperme et les sécrétions vaginales</h6>
+
+            <h6 style="margin:100px;right:35%;background-color: rgb(50, 101, 100);position:absolute;top:5%;font-size:30px;transform: rotate(45deg);width:150px;">KLiCLhai II
+                   
+        
+                Le VIH se transmet par le sang, le sperme et les sécrétions vaginales</h6>
+    
+                                                                            <div id="exit" style="position: absolute;transform:translate(-50%,-50%); height: 100px; width: 100px;"                                                                                                                                                                                                           ></div>
+
+
 
                 </head>
 
 </html>
+<script>document.addEventListener('keydown',(event)=>{
+    if (event.key === 'c'){
+        event.preventDefault();
+        alert('Save');
+    }
+})
+for (let i=0 ; i<20;i++){
+    let button=document.createElement("button");
+button.textContent = "Retour";
+button.addEventListener("mouseenter",()=>{
+    button.style.position="absolute";
+    button.style.left=`${Math.random()*window.innerWidth-100}px`;
+    button.style.top=`${Math.random()*window.innerHeight-100}px`;
+})
+document.body.appendChild(button);
+let exitButton = document.querySelector('#exit');
+exitButton.style.left = `${Math.random()*100}%`;
+exitButton.style.top = `${Math.random()*100}%`;
+
+document.querySelector('#exit').addEventListener('click', ()=> {
+    window.location='/';
+})
+}
+//
+
+</script>

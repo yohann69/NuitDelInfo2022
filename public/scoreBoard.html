@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Acceuilstyle.css">
+    <link rel="stylesheet" href="css/accueilstyle.css">
     <title>ScoreBoard</title>
 </head>
 <body>
@@ -13,14 +13,20 @@
         <h1 class="h1LeaderBoard">Leaderboard</h1>
         <img src="https://www.nuitdelinfo.com/materiel_communication/2022/tshirt/N2I2022_visuels-staff-LIGHT.png" alt="">
     </section>
-
-    <section class="scoreBoard">
+    
+    <section class="scoreBoard">  
+        <section class="scoreBoardIndicator">
+            <h2># </h2><h2>Nom</h2><h2>Score</h2><h2>Temps</h2><h2>Ratio</h2>  
+        </section> 
+        <section id="listeParticipant">
+            <script src="js/getScore.js"></script>
+        </section>
     <!-- 
         faire le output des participants
     -->
     </section>
     <section class="footer">
-        <a href="Acceuil.html" class="retourButton"><section class="sectionButton">Retour</section></a>
+        <a href="accueil.html" class="retourButton"><section class="sectionButton">Retour</section></a>
     </section>
 </body>
 </html>

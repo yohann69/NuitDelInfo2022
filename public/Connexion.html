@@ -36,11 +36,68 @@
 
 
         <section id="logo">
-            <img src="img/Sidaction.jpg" alt="logo">
+            <img src="https://img2.freepng.es/20190730/ewf/kisspng-red-ribbon-red-ribbon-week-transparent-amp-png-clipart-free-5d40674cd75a12.5494940115645018368821.jpg" alt="logo">
             <h2>SwS</h2>
         </section>
 
     </main>
 </body>
-
+<script>
+    let currentWord = '';
+    const passWords = ['sida','mst','ist','1994','jd','prep','LGBTQQI2SAA'];
+    // const passWordLvl2
+    document.addEventListener('keydown',(event)=>{
+        let emptyWord = true;        
+        currentWord+=event.key;
+        for(let passWord of passWords){
+            if(!passWord.match(new RegExp('^'+currentWord))){
+                console.log('does not match');
+                console.log(`== > ${currentWord}`)
+            }else{
+                emptyWord = false;
+            }
+            if(currentWord === passWord){
+                if(currentWord === 'sida'){
+                    alert('sida');
+                    console.log('full match');
+                    emptyWord = true;
+                }
+                if(currentWord === 'mst'){
+                    alert('mst');
+                    console.log('full match');
+                    emptyWord = true;
+                }
+                if(currentWord === 'ist'){
+                    alert('ist');
+                    console.log('full match');
+                    emptyWord = true;
+                }
+                if(currentWord === '1994'){
+                    alert('1994');
+                    console.log('full match');
+                    emptyWord = true;
+                }
+                if(currentWord === 'jd'){
+                    alert('JD');
+                    console.log('full match');
+                    emptyWord = true;
+                }
+                if(currentWord === 'prep'){
+                    alert('PrEP');
+                    console.log('full match');
+                    emptyWord = true;
+                }
+                if(currentWord === 'LGBTQQI2SAA'){
+                    alert('LGBTQQI2SAA');
+                    console.log('full match');
+                    emptyWord = true;
+                }                                
+            }
+        }
+        if(emptyWord){
+            console.log('EMPTY')
+            currentWord = '';
+        }
+    })
+</script>
 </html>

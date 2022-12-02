@@ -17,6 +17,8 @@ class OAuth2
      */
     public static function OAuth(string $platform, ?string $code = null): Object
     {
+        $dotenv = Dotenv\Dotenv::createImmutable('../../');
+        $dotenv->load();
         switch ($platform) {
             case self::DISCORD:
                 $credentials = self::getDiscord();

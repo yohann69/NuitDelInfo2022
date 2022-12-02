@@ -1,0 +1,120 @@
+html{
+    background-image: url(https://i.imgur.com/rMf9LwT.jpg);
+    background-size: cover;
+}
+
+.header{
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+    margin:0 2% 0 2% ;
+}
+
+.h1LeaderBoard{
+    color:white;
+    align-self:flex-end;
+    font-size: 2em;
+}
+
+.Welcomepage{
+    
+}
+
+.SectionbuttonPlay{
+    background-size: 200em;
+    background-color: #D7AC13;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.6em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+}
+.Sectionbutton{
+    background-size: 200em;
+    background-color: #575757;
+    height: 65%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.6em;
+    border-radius: 10px;
+}
+.test{
+    height: 60vh;
+}
+a{
+    height: 60%;
+    width: 9%;
+    text-decoration: none;
+    color: black;
+    
+}
+.buttons{
+    display:flex;
+    margin-bottom:0px;
+    justify-content: space-around;
+    align-self: flex-end;
+    height: 10vh;
+    align-items: center;
+}
+.scoreBoardIndicator{
+   
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    border-bottom:solid 1px yellow;
+}
+
+.scoreBoard{
+    background-color: rgb(0 0 0 / 73%);
+    height : 500px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px yellow;
+    overflow: auto;
+
+}
+
+.footer{
+    display:flex;
+}
+
+.sectionButton{
+    height:40px;
+    width:150px;
+
+    background-color: #D7AC13;
+    text-align: center;
+
+}
+
+.retourButton{
+    text-decoration: none;
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    font-size: 200%;
+
+}
+
+.participant{
+    display: flex;
+    color:white;
+    justify-content:space-around;
+}
+
+
+
+@media screen and (max-width:414px){
+    .test{
+        display:none;
+    }
+    .buttons{
+        height:646px;
+        display:flex;
+        flex-direction:column;
+        }    }
+
+ro}

@@ -1,2 +1,83 @@
-h1{text-align: center;}
+html, body{
+    margin: 0;
+    padding: 0;
+    }
 
+body{
+    background-image: url(https://i.imgur.com/ttUcRy5.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+    }
+
+    .ScrollBar{
+        height: 100vh;
+        overflow: auto;
+        
+        
+    }
+
+h1{
+    margin-left: 10%;
+    text-align: center;
+    color: rgb(240, 248, 255);
+    width: 100%;
+    }
+
+.Question{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+details{
+    text-align: center;
+    margin-top: 25px;
+    color: rgb(240, 248, 255);
+    background-color: rgba(255, 194, 204, 0.6);
+    width: 400px;
+    }
+
+summary{
+    background-color: rgba(45, 45, 45, 0.6);
+    padding: 5px 15px;
+    }
+
+p{
+    margin-left: 25px
+    color: rgb(240, 248, 255);
+    }
+
+ul{
+    margin-left: 25px
+    color: rgb(240, 248, 255);
+    }
+
+.footer{
+    position:inherit;
+    margin-top: 10px;
+    margin-right:10px;
+    }
+
+.TopPage{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    }
+    
+.sectionButton{
+    height:40px;
+    width:150px;
+    background-color: #D7AC13;
+    text-align: center;
+    }
+    
+.retourButton{
+    text-decoration: none;
+    color: white;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    font-size: 200%;
+    margin-bottom: 10px;
+    }

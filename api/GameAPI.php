@@ -8,6 +8,6 @@ class GameAPI
 {
     public static function getScore()
     {
-        (new Game)->getScore();
+        return Game::getScores();
     }
 }

@@ -6,7 +6,7 @@
         "psr-4": {
             "NuitDelInfo2022\\": "src/",
             "App\\" : "app/",
-            "Api": "api/"
+            "Api\\": "api/"
         }
     },
     "authors": [

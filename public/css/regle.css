@@ -1,0 +1,49 @@
+body {
+	background-image: url(https://i.imgur.com/ttUcRy5.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 100vh;
+}
+
+body {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer{
+    display:flex;
+}
+
+.sectionButton{
+    height:40px;
+    width:150px;
+
+    background-color: #D7AC13;
+    text-align: center;
+
+}
+
+.retourButton{
+    text-decoration: none;
+    color: white;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    font-size: 200%;
+
+}
+
+li{
+    font-size: 1.12em;
+}
+
+.regle {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(0 0 0 / 73%);
+    border: solid 1px yellow;
+    
+}
