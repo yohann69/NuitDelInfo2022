@@ -2,13 +2,10 @@
 
 namespace NuitDelInfo2022\OAuth;
 
-
-
 class OAuth2
 {
 
     public const DISCORD = 'discord';
-    // public const GOOGLE  = 'google';
 
     /**
      * Setup OAuth
@@ -54,7 +51,6 @@ class OAuth2
         return $user;
 
     }
-
 
     /**
      * Make data request with cURL
@@ -104,25 +100,6 @@ class OAuth2
     }
 
     /**
-     * Return all informations for Google OAuth
-     *
-     * @return array
-     */
-    // public static function getGoogle(): array
-    // {
-    //     return [
-    //         'base_url' => 'https://accounts.google.com/o/oauth2/v2/auth',
-    //         'token_url' => 'https://www.googleapis.com/oauth2/v4/token',
-    //         'endpoint' => 'https://www.googleapis.com/oauth2/v2/userinfo',
-    //         'client_id' => $_ENV['OAUTH2_GOOGLE_CLIENT_ID'],
-    //         'client_secret' => $_ENV['OAUTH2_GOOGLE_CLIENT_SECRET'],
-    //         'redirect_uri' => $_ENV['OAUTH2_CLIENT_REDIRECT_URI'],
-    //         'scope' => urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'),
-    //         'platform' => self::GOOGLE
-    //     ];
-    // }
-
-    /**
      * Get all information after platform redirection
      *
      * @param string $target
@@ -146,16 +123,6 @@ class OAuth2
                     'platform' => self::DISCORD
                 ];
                 break;
-            // case self::GOOGLE:
-            //     $data = self::OAuth(self::GOOGLE, $queries['code']);
-            //     $dataFormatted = [
-            //         'id' => $data->id,
-            //         'username' => $data->name,
-            //         'email' => $data->email,
-            //         'profile_picture' => $data->picture,
-            //         'platform' => self::GOOGLE
-            //     ];
-            //     break;
             default:
                 die('Unknown platform');
                 break;

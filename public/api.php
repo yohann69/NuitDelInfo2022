@@ -1,7 +1,12 @@
 <?php
 
 use Api\GameAPI;
+use Api\AccountAPI;
 use Api\QuestionAPI;
+use Api\ReponseAPI;
+use App\Game\Reponse;
+
+session_start();
 
 require '../vendor/autoload.php';
 
@@ -13,7 +18,20 @@ switch ($_GET['endpoint']) {
         break;
 
     case 'getQuestion':
-        $return = QuestionAPI::getQuestion($_GET['level']);
+        $return = QuestionAPI::getQuestion($_GET['level'] ?? null);
+        break;
+
+    case 'createAccount':
+        $return = AccountAPI::createAccount();
+        break;
+
+    case 'login':
+        $return = AccountAPI::login();
+        break;
+
+    case 'getReponse':
+        $return = ReponseAPI::getReponseByQuestionId($_GET['id'] ?? null);
+        break;
 
     default :
         $return = ['error' => 'Endpoint not found'];

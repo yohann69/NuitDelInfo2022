@@ -1,0 +1,240 @@
+body {
+    background-image: url(https://i.imgur.com/ttUcRy5.jpg);
+    background-repeat: repeat;
+	background-size: cover;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ScrollBar{
+    margin-bottom: 10px;
+}
+
+
+
+.footer{
+    margin-top: 10px;
+    margin-right:10px;
+    }
+
+.TopPage{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: flex-end;
+    
+    }
+
+.TopPage>h1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 400%;
+    margin-right: 40%;
+   
+    }
+    
+.sectionButton{
+    height:40px;
+    width:150px;
+    background-color: rgba(153, 0, 255, 0.815);
+    text-align: center;
+    }
+    
+.retourButton{
+    text-decoration: none;
+    color: white;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    font-size: 200%;
+    margin-bottom: 10px;
+    }
+
+
+
+h1{
+    text-align:center;
+    color: white;
+}
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+#trait_dessus
+{
+border-top: 1px solid #000;
+width : 700px;
+
+} 
+.by2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 12em;
+    
+}
+.accordion::-webkit-scrollbar {
+    display: none;
+  }
+.accordion-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    margin:0 auto;
+    margin-bottom: 25px;
+}
+.accordion {
+    width: 80%;
+    color: white;
+    overflow: hidden;
+    overflow-x: hidden;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(153, 0, 255, 0.815);
+}
+.accordion:last-child{
+    margin-bottom: 0;
+}
+.accordion-label {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 30px;
+    background: rgba(111, 8, 143, 0.8);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+}
+.accordion-label:hover {
+    background: rgba(111, 8, 143, 0.8);
+}
+.accordion-label::after {
+    content: "\276F";
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.accordion-content {
+    max-height: 0;
+    padding: 0 16px;
+    color: rgba(111, 8, 143, 0.8);
+    background: white;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
+}
+.accordion-content p{
+    margin: 0;
+    color: rgba(4,57,94,.7);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+input:checked + .accordion-label {
+    background: rgba(111, 8, 143, 0.8);
+}
+input:checked + .accordion-label::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+input:checked ~ .accordion-content {
+    max-height: 100vh;
+    padding: 16px;
+}
+
+h1{
+    color: #484848;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
+    cursor: pointer
+  }
+  h1 span{
+    transition: .5s linear
+  }
+ 
+  h1 span:nth-child(1):after{
+    content: "";
+  }
+  
+  h1 span{
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff, 
+                 0 0 40px #fff;
+  }
+
+
+
+  
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

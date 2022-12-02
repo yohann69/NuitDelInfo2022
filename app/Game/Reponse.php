@@ -16,7 +16,11 @@ class Reponse
         $this->reponseText = $reponseText;
         $this->isTrue = $isTrue;
     }
-    
+
+    public static function getReponseByQuestion(int $questionId): ?array
+    {
+        return Database::getInstance()->fetchAll("SELECT * FROM REPONSES WHERE idQuestion = ?", [$questionId]);
+    }
 }
 
 ?>

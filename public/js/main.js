@@ -88,6 +88,7 @@ let imageArray = [
 ];
 
 let questions = [];
+let responses = [];
 
 
 let gameStarted = false;
@@ -100,16 +101,21 @@ let startDate = 0;
 let answered = false;
 let questionLeft;
 let questionRight;
+let questionIndexLeft = [4, 14, 24, 55, 66]
+let questionIndexRight = [7, 10, 16, 29, 32, 35, 39, 58, 60, 63, 70]
+let rangQuestion = 0;
+let correctAnswer = 1
 
 function launchGame() {
     console.log("Début du jeu")
     gameStarted = true;
 
-    document.querySelector('.Welcomepage').innerHTML = `<section></section>`;
+    document.querySelector('.Welcomepage').innerHTML = `<header>Score : <span class="score">0</span>/16 | Vies : <span class="vies">3</span>/3</header><section></section>`;
 
     displayImage();
 
     document.querySelector('section').innerHTML += `
+    
         <section class="question left">
             <h2>Voulez-vous jouer avec des questions difficiles ?</h2>
         </section>
@@ -118,8 +124,8 @@ function launchGame() {
             <h2>Voulez-vous jouer avec des questions faciles ?</h2>
         </section>
     `;
-/*     i++; */
-    questionLeft= document.querySelector('.left');
+    /*     i++; */
+    questionLeft = document.querySelector('.left');
     questionRight = document.querySelector('.right');
 
     startDate = date.getTime();
@@ -128,38 +134,49 @@ function launchGame() {
 
 
 
-async function loadQuestions(isHardMode){
+function loadQuestions(isHardMode) {
     // Get all questions and add them to the questions array
-    
-    
-    
+
+
+    fetch(`http://ichbinagree.alwaysdata.net/api.php?endpoint=getQuestion&level=${isHardMode ? 1 : 2}`)
+        .then(response => response.json())
+        .then(data => {
+            questions = data; console.log(questions);
+        });
+
     // Continue the game
-    i ++;
+    i++;
     answered = true;
-    displayImage()
+    displayImage();
 }
 
 
-document.addEventListener('keydown', (event) => {
-    console.log(i)
 
-    if(event.key === "ArrowLeft" && gameStarted === true && i === 0) {
+async function loadResponses() {
+    await fetch(`https://ichbinagree.alwaysdata.net/api.php?endpoint=getReponse&id=${questions[rangQuestion].idQuestion}`)
+        .then(response => response.json())
+        .then(data => {
+            responses = data; console.log(responses);
+        });
+}
+
+document.addEventListener('keydown', (event) => {
+
+    if (event.key === "ArrowLeft" && gameStarted === true && i === 0) {
         isHardMode = true;
         console.log("Mode difficile");
+        cleanQuestions()
         loadQuestions(isHardMode);
-        questionLeft.innerHTML = ``;
-        questionRight.innerHTML = ``;
-        
+
     }
-    if(event.key === "ArrowRight" && gameStarted === true && i === 0) {
+    if (event.key === "ArrowRight" && gameStarted === true && i === 0) {
         isHardMode = false;
         console.log("Mode facile");
+        cleanQuestions()
         loadQuestions(isHardMode);
-        questionLeft.innerHTML = ``;
-        questionRight.innerHTML = ``;
     }
 
-    
+
     if (event.key === 'ArrowUp' && gameStarted === true && i < imageArray.length + 1 && answered === true) {
         i++;
         displayImage()
@@ -168,17 +185,125 @@ document.addEventListener('keydown', (event) => {
         i--;
         displayImage()
     }
+    if (questionIndexLeft.indexOf(i) !== -1) {
+        answered = false;
+        loadResponses().then(() => {
+
+
+            for(let i = 0 ; i < responses.length ; i++){
+                if(responses[i].estBonneReponse === "1"){
+                    correctAnswer = i+1;
+                }
+            }
+
+            questionLeft.innerHTML = `<h2>${questions[rangQuestion].question}</h2>
+                                        <div class="rep">
+
+                                            <div>
+                                                <input type="radio" id="rep1" name="reponse">
+                                                <label for="answer">${responses[0].reponse}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="rep2" name="reponse">
+                                                <label for="answer">${responses[1].reponse}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="rep3" name="reponse">
+                                                <label for="answer">${responses[2].reponse}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="rep4" name="reponse">
+                                                <label for="answer">${responses[3].reponse}</label>
+                                            </div>
+                                        </div>
+                                        <button onclick="validerQuestion(correctAnswer)">Valider</button>
+                                            `;
+        });
+
+    }
+    if (questionIndexRight.indexOf(i) !== -1) {
+        answered = false;
+        loadResponses().then(() =>  {
+            
+            
+            for(let i = 0 ; i < responses.length ; i++){
+                if(responses[i].estBonneReponse === "1"){
+                    correctAnswer = i +1;
+                }
+            }
+
+
+            questionRight.innerHTML = `<h2>${questions[rangQuestion].question}</h2>
+                                            <div class="rep">
+
+                                            <div>
+                                                <input type="radio" id="rep1" name="reponse">
+                                                <label for="answer">${responses[0].reponse}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="rep2" name="reponse">
+                                                <label for="answer">${responses[1].reponse}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="rep3" name="reponse">
+                                                <label for="answer">${responses[2].reponse}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="rep4" name="reponse">
+                                                <label for="answer">${responses[3].reponse}</label>
+                                            </div>
+                                        </div>
+                                        <button onclick="validerQuestion(correctAnswer)">Valider</button>
+                                            `;
+        });
+    }
+
+    console.log(i)
+
 })
 
 
 
-function displayImage(){
+
+
+
+function validerQuestion(correctAnswer) {
+
+
+    if(document.getElementById(`rep${correctAnswer}`).checked) {
+        nbPoints +=1;
+        document.querySelector('.score').innerHTML = nbPoints;
+    } else {
+        nbVies -=1;
+        document.querySelector('.vies').innerHTML = nbVies;
+    }
     
+    if(nbVies === 0) {
+        // change url to Movai.html
+        window.location.href = "Movai.html";
+        
+    }
+    
+    rangQuestion++;
+    answered = true;
+    cleanQuestions()
+    i++;
+    displayImage()
+}
+
+
+function cleanQuestions() {
+    questionLeft.innerHTML = ``;
+    questionRight.innerHTML = ``;
+}
+
+
+function displayImage() {
     document.querySelector('html').style.backgroundImage = `url(${imageArray[i]})`;
 }
 
 
 
-let timer=0;
-setInterval(() => {timer+=1},1000);
+let timer = 0;
+setInterval(() => { timer += 1 }, 1000);
 

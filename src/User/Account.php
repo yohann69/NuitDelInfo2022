@@ -9,31 +9,33 @@ class Account
     public static function login(string $login, string $password)
     {
         $db = new Database();
-        $user = $db->fetch("SELECT `login`, motdepasse FROM UTILISATEURS WHERE login = :lo",[
+        $user = $db->fetch("SELECT `Pseudo`, motdepasse FROM UTILISATEURS WHERE login = :lo",[
             'lo' => $login
         ]);
 
         if ($user === false || count($user) === 0) return false;
-        return password_verify($password, $user['motdepasse']);
+        if (!password_verify($password, $user['motdepasse'])) return false;
+
+        $_SESSION['login'] = $user['login'];
     }
 
     public static function signup (
         string $username,
-        
         string $password,
-        string $passwordConfirm,
-        string $email
-    ): bool|string {
+        string $passwordConfirm
+    ) {
         $db = new Database();
-        $exists = $db->fetch("SELECT COUNT(`login`) FROM UTILISATEURS");
-        if ($exists > 0) return 'Pseudo déjà utilisé';
+        $exists = $db->fetch("SELECT COUNT(`Pseudo`) AS PS FROM UTILISATEURS WHERE Pseudo = :us",[
+            'us' => $username
+        ]);
+        if ($exists['PS'] > 0) return 'Pseudo déjà utilisé';
         elseif ($password !== $passwordConfirm) return 'Les mots de passes ne correspondent pas';
         else {
-            $db->execute("INSERT INTO UTILISATEURS (login, motdepasse, email) VALUES (?, ?, ?)", [
+            $db->execute("INSERT INTO UTILISATEURS (Pseudo, motdepasse) VALUES (?, ?)", [
                 $username,
                 password_hash($password, PASSWORD_ARGON2ID),
-                $email
             ]);
+            $_SESSION['login'] = $username;
             return true;
         }
     }

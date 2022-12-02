@@ -57,3 +57,10 @@ li{
     border: solid 1px yellow;
     
 }
+
+
+@media only screen and (max-width: 414px){
+    .header>img {
+        height: 150px;
+    }
+}

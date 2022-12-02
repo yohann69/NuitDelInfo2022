@@ -14,7 +14,7 @@
     <main class="login">
 
         <section id="login">
-            <form>
+            <form action="/api.php?endpoint=createAccount" method="POST">
                 <h1>Connexion</h1>
                 <section>
                     <section class="credentials">
@@ -23,7 +23,7 @@
                     </section>
                     <section class="credentials">
                         <label>Description</label>
-                        <input type="text" name="Description" placeholder="Decrivez-vous">
+                        <input type="text" name="description" placeholder="Entrez une description">
                     </section>
 
                     <section class="credentials">
@@ -33,7 +33,7 @@
 
                     <section class="credentials">
                         <label>Confirmer mot de passe</label>
-                        <input type="password" name="password" placeholder="********">
+                        <input type="password" name="passwordC" placeholder="********">
                     </section>
                 </section>
 
@@ -45,7 +45,7 @@
 
 
         <section id="logo">
-            <img src="https://pluspng.com/hiv-aids-png-2765.html" alt="logo">
+            <img src="https://clipground.com/images/logo-sida-clipart-1.png" alt="logo">
             <h2>SwS</h2>
         </section>
 
