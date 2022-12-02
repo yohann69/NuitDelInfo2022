@@ -7,7 +7,6 @@
 let imageArray = [
     "img/assets/IMG_7670-min.JPG",
     "img/assets/IMG_7672-min.JPG",
-    "img/assets/IMG_7674-min.JPG",
 
     "img/assets/IMG_7675-min.JPG",
     "img/assets/IMG_7676-min.JPG",
@@ -108,7 +107,7 @@ function launchGame() {
 
     document.querySelector('.Welcomepage').innerHTML = `<section></section>`;
 
-    document.querySelector('html').style.backgroundImage = `url(${imageArray[i]})`;
+    displayImage();
 
     document.querySelector('section').innerHTML += `
         <section class="question left">
@@ -119,7 +118,7 @@ function launchGame() {
             <h2>Voulez-vous jouer avec des questions faciles ?</h2>
         </section>
     `;
-    i++;
+/*     i++; */
     questionLeft= document.querySelector('.left');
     questionRight = document.querySelector('.right');
 
@@ -137,19 +136,22 @@ async function loadQuestions(isHardMode){
     // Continue the game
     i ++;
     answered = true;
+    displayImage()
 }
 
 
 document.addEventListener('keydown', (event) => {
     console.log(i)
 
-    if(event.key === "ArrowLeft" && gameStarted === true && i === 1) {
+    if(event.key === "ArrowLeft" && gameStarted === true && i === 0) {
         isHardMode = true;
         console.log("Mode difficile");
         loadQuestions(isHardMode);
+        questionLeft.innerHTML = ``;
+        questionRight.innerHTML = ``;
         
     }
-    if(event.key === "ArrowRight" && gameStarted === true && i === 1) {
+    if(event.key === "ArrowRight" && gameStarted === true && i === 0) {
         isHardMode = false;
         console.log("Mode facile");
         loadQuestions(isHardMode);

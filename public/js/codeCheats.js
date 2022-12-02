@@ -1,5 +1,5 @@
 let currentWord = '';
-    const passWords = ['sida','mst','ist','1994','jd','prep','LGBTQQI2SAA'];
+    const passWords = ['sida','mst','ist','1994','jd','prep','LGBTQQI2SAA',''];
     // const passWordLvl2
     document.addEventListener('keydown',(event)=>{
         let emptyWord = true;        

@@ -110,6 +110,10 @@ html{
     justify-content:space-around;
 }
 
+.participant>img{
+    width: 10%;
+    border-radius: 50px;
+}
 
 
 .question {
@@ -140,6 +144,9 @@ html{
     right: 3%;
 }
 
+#listeParticipant{
+    height: 100%;
+}
 
 @media screen and (max-width:414px){
     .test{
