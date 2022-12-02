@@ -148,8 +148,10 @@ html{
     .buttons{
 
         display:flex;
-        flex-direction:row;
+        flex-direction:column;
         width: 390px;
+        height: 60vh;
+        justify-content: space-between;
         }  
         
     .Sectionbutton{
@@ -157,7 +159,18 @@ html{
         margin: 0;
     }
     .Bouttons{
-        
+        margin-top: 50px;
+        width: 150px;
+    }
+
+    .SectionbuttonPlay{
+        width: 150px;
+    }
+
+    /*Suite*/
+
+    .header{
+        height: 75px;
     }
 }
 

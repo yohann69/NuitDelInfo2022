@@ -97,7 +97,10 @@ let nbVies = 3;
 let nbPoints = 0;
 let isHardMode = false;
 let date = new Date();
-let startDate = date.getTime() + 1000 * 60 * 5;
+let startDate = 0;
+let answered = false;
+let questionLeft;
+let questionRight;
 
 function launchGame() {
     console.log("Début du jeu")
@@ -117,30 +120,63 @@ function launchGame() {
         </section>
     `;
     i++;
+    questionLeft= document.querySelector('.left');
+    questionRight = document.querySelector('.right');
+
+    startDate = date.getTime();
 }
 
-function loadQuestions(isHardMode){
 
+
+
+async function loadQuestions(isHardMode){
+    // Get all questions and add them to the questions array
+    
+    
+    
+    // Continue the game
+    i ++;
+    answered = true;
 }
 
 
 document.addEventListener('keydown', (event) => {
-    if(event.key === "ArrowLeft" && gameStarted === true && i === 0) {
+    console.log(i)
+
+    if(event.key === "ArrowLeft" && gameStarted === true && i === 1) {
         isHardMode = true;
+        console.log("Mode difficile");
         loadQuestions(isHardMode);
+        
     }
-    if(event.key === "ArrowRight" && gameStarted === true && i === 0) {
+    if(event.key === "ArrowRight" && gameStarted === true && i === 1) {
         isHardMode = false;
+        console.log("Mode facile");
         loadQuestions(isHardMode);
+        questionLeft.innerHTML = ``;
+        questionRight.innerHTML = ``;
     }
 
     
-    if (event.key === 'ArrowUp' && gameStarted === true && i < imageArray.length + 1) {
+    if (event.key === 'ArrowUp' && gameStarted === true && i < imageArray.length + 1 && answered === true) {
         i++;
-        document.querySelector('html').style.backgroundImage = `url(${imageArray[i]})`;
+        displayImage()
     }
-    if (event.key === 'ArrowDown' && gameStarted === true && i > 0) {
+    if (event.key === 'ArrowDown' && gameStarted === true && i > 1) {
         i--;
-        document.querySelector('html').style.backgroundImage = `url(${imageArray[i]})`;
+        displayImage()
     }
 })
+
+
+
+function displayImage(){
+    
+    document.querySelector('html').style.backgroundImage = `url(${imageArray[i]})`;
+}
+
+
+
+let timer=0;
+setInterval(() => {timer+=1},1000);
+
