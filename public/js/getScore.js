@@ -21,7 +21,7 @@ fetch("/api.php?endpoint=getScore").then(
         nom.textContent=element['Pseudo'];
         Score.textContent=element['Score'];
         Temps.textContent=element['Temps'];
-        Ratio.textContent = 'CalculRatio(Score, Temps)';
+        Ratio.textContent = CalculRatio(element['Score'], element['Temps']);
         newSectionParticipant.appendChild(classement);
         newSectionParticipant.appendChild(nom);
         newSectionParticipant.appendChild(Score);

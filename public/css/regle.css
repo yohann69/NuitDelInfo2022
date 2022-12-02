@@ -5,12 +5,22 @@ body {
     min-height: 100vh;
 }
 
-body {
+
+.header{
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+    margin:0 2% 0 2% ;
+}
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
     color: white;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .footer{

@@ -1,6 +1,9 @@
 html{
     background-image: url(https://i.imgur.com/rMf9LwT.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center center;
 }
 
 .header{
@@ -10,20 +13,22 @@ html{
     margin:0 2% 0 2% ;
 }
 
+.header>a>img{
+    width: 250px;
+}
+
 .h1LeaderBoard{
     color:white;
     align-self:flex-end;
     font-size: 2em;
 }
 
-.Welcomepage{
-    
-}
 
 .SectionbuttonPlay{
     background-size: 200em;
     background-color: #D7AC13;
-    height: 100%;
+    height: 65%;
+    width: 10%;
     text-align: center;
     vertical-align: middle;
     font-size: 2.6em;
@@ -39,16 +44,18 @@ html{
     font-size: 1.6em;
     border-radius: 10px;
 }
+
 .test{
     height: 60vh;
 }
-a{
+
+.Bouttons{
     height: 60%;
     width: 9%;
     text-decoration: none;
     color: black;
-    
 }
+
 .buttons{
     display:flex;
     margin-bottom:0px;
@@ -80,11 +87,9 @@ a{
     display:flex;
 }
 
-.sectionButton{
-    height:40px;
-    width:150px;
-
+.sectionButtonRetour{
     background-color: #D7AC13;
+    height: auto;
     text-align: center;
 
 }
@@ -107,14 +112,52 @@ a{
 
 
 
+.question {
+    max-width: 400px;
+    background: rgba(255,255,255,0.45);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.225);
+    padding: 15px 20px;
+    border-radius: 10px;
+    top: 20%
+}
+
+.question h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    color: black;
+}
+
+
+.left{
+    position: absolute;
+    left:  3%;
+}
+
+.right{
+    position: absolute;
+    right: 3%;
+}
+
+
 @media screen and (max-width:414px){
     .test{
         display:none;
     }
     .buttons{
-        height:646px;
-        display:flex;
-        flex-direction:column;
-        }    }
 
-ro}
+        display:flex;
+        flex-direction:row;
+        width: 390px;
+        }  
+        
+    .Sectionbutton{
+        width: 100%;
+        margin: 0;
+    }
+    .Bouttons{
+        
+    }
+}
+
